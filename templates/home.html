@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  </head>
+
+
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+	<h1 class="text-muted">Antoine App Demo - simple file merge</h1>
+      </div>
+      <hr/>
+
+
+      <form class="form-horizontal" action="." method="post" id="merger_form">
+
+
+	<div class="row">
+	  <div class=".col-xs-4 .col-sm-4 .col-md-4 .col-lg-4">
+	    <label for="text1">Text 1</label>
+	    <!-- <input type="text" class="form-control" name="text1" placeholder="text1" value="{{result.text1}}"> -->
+	    <textarea form="merger_form" class="form-control" name="text1">{{result.text1}}</textarea>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class=".col-xs-4 .col-sm-4 .col-md-4 .col-lg-4">
+	    <label for="text2">Text 2</label>
+	    <!-- <input type="text" class="form-control" name="text2" placeholder="text2" value="{{result.text2}}"> -->
+	    <textarea form="merger_form" class="form-control" name="text2">{{result.text2}}</textarea>
+	  </div>
+	</div>
+	<p></p>
+	<div class="row">
+	  <div class=".col-xs-4 .col-sm-4 .col-md-4 .col-lg-4">
+	    <input type="submit" class="btn btn-primary" value="Merge">
+	  </div>
+	</div>
+
+      </form>
+      {% if result.text3 %}
+      <h2>Et voilà !</h2>
+      <p>{{ result.text3 }}</p>
+      {% endif %}
+
+    </div>
+  </body>
+</html>
+
+
+
